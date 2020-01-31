@@ -40,4 +40,11 @@ public class Item {
     public override string ToString() {
         return "id: " + id + ", name: " + name;
     }
+
+    public bool isStackable() {
+        switch (itemType) {
+            case ItemType.MobDrop: return true;
+            default: return false;
+        }
+    }
 }

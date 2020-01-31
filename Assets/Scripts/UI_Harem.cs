@@ -10,6 +10,7 @@ public class UI_Harem : MonoBehaviour {
     private bool enabled;
 
     public void setHaremStorage (HaremStorage haremStorage) {
+        haremStorage.debugAll();
         this.haremStorage = haremStorage;
         Debug.Log ("storage set successfully");
         haremStorage.OnHaremListChanged += Harem_OnHaremListChanged;
@@ -19,21 +20,27 @@ public class UI_Harem : MonoBehaviour {
 
     }
 
+    public void test() {
+        Debug.Log("test");
+    }
+
     private void Harem_OnHaremListChanged (object sender, System.EventArgs e) {
         Debug.Log ("Harem_OnHaremListChanged triggered");
         refreshHarem ();
     }
 
     private void Awake () {
+                Debug.Log("UI_HAREM is trying to wake up");
+
         haremContent = transform;
         profileTemplate = haremContent.Find ("profileTemplate");
-        Debug.Log (haremContent.GetChild (0));
+        Debug.Log("UI_HAREM has awoken");
     }
 
     void OnEnable () {
         Debug.Log ("harem enabled");
         enabled = true;
-        refreshHarem ();
+        // refreshHarem ();
     }
 
     void OnDisable () {

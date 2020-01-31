@@ -27,4 +27,10 @@ public class HaremStorage {
     public List<Member> getHaremList () {
         return haremList;
     }
+
+    public void debugAll() {
+        foreach (Member m in haremList) {
+            Debug.Log("in the harem storage: " + m.ToString());
+        }
+    }
 }

@@ -60,7 +60,7 @@ public class AdventureController : MonoBehaviour {
         foreach (Member member in haremStorage.getHaremList()) {
             Debug.Log(member.ToString());
         }
-        
+        // uiHarem.test();
         // uiHarem.setHaremStorage (haremStorage);
     }
     void Start () {
@@ -168,7 +168,7 @@ public class AdventureController : MonoBehaviour {
         enemyList.Add (new Enemy (i++, 0, "Bartholomew", "His enemies call him tom.", 2, 2, 3, 2, 100, 1.5,items.getRandomItem()));
         enemyList.Add (new Enemy (i++, 0, "bradley", "His friends call him brodey.", 2, 2, 3, 2, 100, 1.5,items.getRandomItem()));
         enemyList.Add (new Enemy (i++, 0, "rain", "Not the weather.", 2, 2, 3, 2, 100, 1.5,items.getRandomItem()));
-        enemyList.Add (new Enemy (i++, 0, "God", "Not much you can do about that buddy.", 40, 40, 40, 40, 500, 10,items.getRandomItem()));
+        enemyList.Add (new Enemy (i++, 0, "God", "Not much you can do about that buddy.", 40, 40, 40, 40, 200, 10,items.getRandomItem()));
         // enemyList.Add (new Enemy (i++, 0, "rain", "Not the weather.", 2, 2, 3, 2, 100, 1.5));
         // enemyList.Add (new Enemy (i++, 0, "rain", "Not the weather.", 2, 2, 3, 2, 100, 1.5));
         // enemyList.Add (new Enemy (i++, 0, "rain", "Not the weather.", 2, 2, 3, 2, 100, 1.5));
