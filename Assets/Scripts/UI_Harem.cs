@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 public class UI_Harem : MonoBehaviour {
     private HaremStorage haremStorage;
@@ -20,18 +22,13 @@ public class UI_Harem : MonoBehaviour {
 
     }
 
-    public void test() {
-        Debug.Log("test");
-    }
-
     private void Harem_OnHaremListChanged (object sender, System.EventArgs e) {
         Debug.Log ("Harem_OnHaremListChanged triggered");
         refreshHarem ();
     }
 
     private void Awake () {
-                Debug.Log("UI_HAREM is trying to wake up");
-
+        Debug.Log("UI_HAREM is trying to wake up");
         haremContent = transform;
         profileTemplate = haremContent.Find ("profileTemplate");
         Debug.Log("UI_HAREM has awoken");
@@ -40,7 +37,7 @@ public class UI_Harem : MonoBehaviour {
     void OnEnable () {
         Debug.Log ("harem enabled");
         enabled = true;
-        // refreshHarem ();
+        refreshHarem();
     }
 
     void OnDisable () {
@@ -50,7 +47,6 @@ public class UI_Harem : MonoBehaviour {
 
     private void refreshHarem () {
         if (enabled) {
-
             foreach (Transform child in haremContent) {
                 Debug.Log ("Child: " + child);
                 if (child == profileTemplate) {
@@ -61,13 +57,22 @@ public class UI_Harem : MonoBehaviour {
             }
 
             foreach (Member member in haremStorage.getHaremList ()) {
+                if (member.getName().Equals("02")) {
+                    continue;
+                }
                 Debug.Log ("Cloning profile template");
 
+                //Get rectangle that displays info for a waifu
                 RectTransform itemSlotRectTransform = Instantiate (profileTemplate, haremContent).GetComponent<RectTransform> ();
                 itemSlotRectTransform.gameObject.SetActive (true);
 
+                //Get image display and set to resource image
                 Image image = itemSlotRectTransform.Find ("imgProfile").GetComponent<Image> ();
-                image.sprite = member.getSprite ();
+                image.sprite = Resources.Load<Sprite>(member.getName()) as Sprite;
+
+                //Get text display and set to waifu name
+                Text text = itemSlotRectTransform.Find ("txtProfile").GetComponent<Text>();
+                text.text = member.getName();
             }
         }
     }

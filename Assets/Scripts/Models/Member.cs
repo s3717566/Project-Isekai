@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Member
 {
-    public int id;
-    public string name;
-    public string desc;
-    public Sprite sprite = IconController.Instance.castleSprite;
-    public bool unlocked;
-
-    public Sprite getSprite() {
-        return sprite;
-    }
+    private int id;
+    private string name;
+    private string desc;
+    private Sprite sprite = IconController.Instance.castleSprite;
+    private bool unlocked;
 
     public Member (int id, string name, string desc, Sprite sprite) {
         this.id = id;
@@ -30,8 +26,28 @@ public class Member
         this.unlocked = false;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public string getName() {
         return name;
+    }
+
+    public string getDesc() {
+        return desc;
+    }
+
+    public Sprite getSprite() {
+        return sprite;
+    }
+
+    public bool getUnlocked() {
+        return unlocked;
+    }
+
+    public void setUnlocked(bool unlocked) {
+        this.unlocked = unlocked;
     }
 
     public override string ToString() {
