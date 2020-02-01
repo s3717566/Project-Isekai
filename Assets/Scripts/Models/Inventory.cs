@@ -3,44 +3,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory {
+public class Inventory : MonoBehaviour {
 
-    public event EventHandler OnItemListChanged;
+    [SerializeField] List<Item> items;
+    [SerializeField] Transform itemsParent;
+    [SerializeField] ItemSlot[] itemSlots;
 
-    private List<Item> inventoryList;
+public event Action<Item> OnItemRightClickedEvent;
 
-    public Inventory () {
-        inventoryList = new List<Item> ();
 
-        Debug.Log ("inventory list count: " + inventoryList.Count);
-
+private void Start() {
+    for (int i = 0; i < itemSlots.Length; i++) {
+        itemSlots[i].OnRightClickEvent += OnItemRightClickedEvent;
     }
-
-    public void addItem (Item item) {
-        if (item.isStackable ()) {
-            bool itemAlreadyInInventory = false;
-            foreach (Item inventoryItem in inventoryList) {
-                if (inventoryItem.id == item.id) {
-                    Debug.Log("added quantity of item");
-                    //since these items are not new, when it is increased in inventory it is also increased when dropped from mob
-                    //would need to create a new object (copy constructor or something else)
-                    inventoryItem.amount += 1;
-                    // inventoryItem.amount += item.amount;
-                    // Debug.Log("new item quantity after adding " + item.amount + ": " + inventoryItem.amount);
-                    itemAlreadyInInventory = true;
-                }
-            }
-            if (!itemAlreadyInInventory) {
-                inventoryList.Add (item);
-            }
-        } else {
-        inventoryList.Add (item);
+}
+    private void OnValidate () {
+        if (itemsParent != null) {
+            itemSlots = itemsParent.GetComponentsInChildren<ItemSlot>();
         }
-        OnItemListChanged.Invoke (this, EventArgs.Empty);
-        // Debug.Log ("Added " + item.ToString () + " to list");
+
+        RefreshUI();
     }
 
-    public List<Item> getInventoryList () {
-        return inventoryList;
+    private void RefreshUI() {
+        int i = 0;
+        for (;i < items.Count && i < itemSlots.Length; i++ ) {
+            itemSlots[i].Item = items[i];
+        }
+
+        for (; i < itemSlots.Length; i++) {
+            itemSlots[i].Item = null;
+        }
+    }
+
+    public bool AddItem(Item item) {
+        if (IsFull())
+        {return false;}
+
+        items.Add(item);
+        RefreshUI();
+        return true;
+    }
+
+    public bool IsFull() {
+        return items.Count >= itemSlots.Length;
+    }
+
+    public bool RemoveItem(Item item) {
+        if (items.Remove(item)) {
+            RefreshUI();
+            return true;
+        }
+        return false;
     }
 }
