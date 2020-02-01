@@ -57,6 +57,9 @@ public class UI_Harem : MonoBehaviour {
             }
 
             foreach (Member member in haremStorage.getHaremList ()) {
+                if (member.getName().Equals("02")) {
+                    continue;
+                }
                 Debug.Log ("Cloning profile template");
 
                 //Get rectangle that displays info for a waifu
