@@ -8,6 +8,7 @@ public class Member
     public string name;
     public string desc;
     public Sprite sprite = IconController.Instance.castleSprite;
+    public bool unlocked;
 
     public Sprite getSprite() {
         return sprite;
@@ -18,6 +19,7 @@ public class Member
         this.name = name;
         this.desc = desc;
         this.sprite = sprite;
+        this.unlocked = false;
     }
 
         public Member (int id, string name, string desc) {
@@ -25,6 +27,7 @@ public class Member
         this.name = name;
         this.desc = desc;
         this.sprite = IconController.Instance.castleSprite;
+        this.unlocked = false;
     }
 
     public string getName() {
