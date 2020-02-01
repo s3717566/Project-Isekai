@@ -35,13 +35,13 @@ public class AdventureController : MonoBehaviour {
     bool currentEnemyDead = true;
     Dungeon currentDungeon;
     bool dead;
-    private Inventory inventory;
+    // private Inventory inventory;
     private HaremStorage haremStorage;
 
-    [SerializeField] private UI_Inventory uiInventory;
+    // [SerializeField] private UI_Inventory uiInventory;
     [SerializeField] private UI_Harem uiHarem;
 
-    private ItemController items;
+    // private ItemController items;
     //todo: move this a different class
 
     bool isAttacking = true;
@@ -54,8 +54,8 @@ public class AdventureController : MonoBehaviour {
     // Start is called before the first frame update
 
     void Awake () {
-        inventory = new Inventory ();
-        uiInventory.setInventory (inventory);
+        // inventory = new Inventory ();
+        // uiInventory.setInventory (inventory);
         haremStorage = new HaremStorage();
         foreach (Member member in haremStorage.getHaremList()) {
             Debug.Log(member.ToString());
@@ -64,9 +64,9 @@ public class AdventureController : MonoBehaviour {
         // uiHarem.setHaremStorage (haremStorage);
     }
     void Start () {
-        items = new ItemController();
-        items.populateItems();
-        Item tempItem = items.getItem();
+        // items = new ItemController();
+        // items.populateItems();
+        // Item tempItem = items.getItem();
 
         phyAttack = 100;
         phyDefence = 100;
@@ -157,23 +157,23 @@ public class AdventureController : MonoBehaviour {
     }
 
     void dropItem () {
-        inventory.addItem(currentEnemy.getItem());
+        // inventory.addItem(currentEnemy.getItem());
 
     }
 
     void populateEnemies () {
-        //todo: add enemy spawn rate to list
-        int i = 0;
-        enemyList.Add (new Enemy (i++, 0, "Thomas", "His friends call him tom.", 2, 2, 2, 2, 100, 1, items.getRandomItem() ));
-        enemyList.Add (new Enemy (i++, 0, "Bartholomew", "His enemies call him tom.", 2, 2, 3, 2, 100, 1.5,items.getRandomItem()));
-        enemyList.Add (new Enemy (i++, 0, "bradley", "His friends call him brodey.", 2, 2, 3, 2, 100, 1.5,items.getRandomItem()));
-        enemyList.Add (new Enemy (i++, 0, "rain", "Not the weather.", 2, 2, 3, 2, 100, 1.5,items.getRandomItem()));
-        enemyList.Add (new Enemy (i++, 0, "God", "Not much you can do about that buddy.", 40, 40, 40, 40, 200, 10,items.getRandomItem()));
-        // enemyList.Add (new Enemy (i++, 0, "rain", "Not the weather.", 2, 2, 3, 2, 100, 1.5));
-        // enemyList.Add (new Enemy (i++, 0, "rain", "Not the weather.", 2, 2, 3, 2, 100, 1.5));
-        // enemyList.Add (new Enemy (i++, 0, "rain", "Not the weather.", 2, 2, 3, 2, 100, 1.5));
-        // enemyList.Add (new Enemy (i++, 0, "rain", "Not the weather.", 2, 2, 3, 2, 100, 1.5));
-        // enemyList.Add (new Enemy (i++, 0, "rain", "Not the weather.", 2, 2, 3, 2, 100, 1.5));
+    //     //todo: add enemy spawn rate to list
+    //     int i = 0;
+    //     enemyList.Add (new Enemy (i++, 0, "Thomas", "His friends call him tom.", 2, 2, 2, 2, 100, 1, items.getRandomItem() ));
+    //     enemyList.Add (new Enemy (i++, 0, "Bartholomew", "His enemies call him tom.", 2, 2, 3, 2, 100, 1.5,items.getRandomItem()));
+    //     enemyList.Add (new Enemy (i++, 0, "bradley", "His friends call him brodey.", 2, 2, 3, 2, 100, 1.5,items.getRandomItem()));
+    //     enemyList.Add (new Enemy (i++, 0, "rain", "Not the weather.", 2, 2, 3, 2, 100, 1.5,items.getRandomItem()));
+    //     enemyList.Add (new Enemy (i++, 0, "God", "Not much you can do about that buddy.", 40, 40, 40, 40, 200, 10,items.getRandomItem()));
+    //     // enemyList.Add (new Enemy (i++, 0, "rain", "Not the weather.", 2, 2, 3, 2, 100, 1.5));
+    //     // enemyList.Add (new Enemy (i++, 0, "rain", "Not the weather.", 2, 2, 3, 2, 100, 1.5));
+    //     // enemyList.Add (new Enemy (i++, 0, "rain", "Not the weather.", 2, 2, 3, 2, 100, 1.5));
+    //     // enemyList.Add (new Enemy (i++, 0, "rain", "Not the weather.", 2, 2, 3, 2, 100, 1.5));
+    //     // enemyList.Add (new Enemy (i++, 0, "rain", "Not the weather.", 2, 2, 3, 2, 100, 1.5));
 
     }
 

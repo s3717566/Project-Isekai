@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268da3dbcc5242f4986811532ec7c888, type: 3}
+  m_Name: Leggings
+  m_EditorClassIdentifier: 
+  ItemName: Legg
+  Icon: {fileID: 21300000, guid: d45135cd7aecb15478d6e074c828df48, type: 3}
+  PhysicalAttackBonus: 3
+  PhysicalDefenseBonus: 1
+  MagicalAttackBonus: 2
+  MagicalDefenseBonus: 4
+  PhysicalAttackPercentBonus: 0
+  PhysicalDefensePercentBonus: 0
+  MagicalAttackPercentBonus: 0
+  MagicalDefensePercentBonus: 0
+  EquipmentType: 3
