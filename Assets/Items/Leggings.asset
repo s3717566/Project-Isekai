@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Legg
   Icon: {fileID: 21300000, guid: d45135cd7aecb15478d6e074c828df48, type: 3}
-  PhysicalAttack: 0
-  PhysicalDefense: 0
-  MagicalAttack: 0
-  MagicalDefense: 0
-  PhysicalAttackPercent: 0
-  PhysicalDefensePercent: 0
-  MagicalAttackPercent: 0
-  MagicalDefensePercent: 0
+  PhysicalAttackBonus: 3
+  PhysicalDefenseBonus: 1
+  MagicalAttackBonus: 2
+  MagicalDefenseBonus: 4
+  PhysicalAttackPercentBonus: 0
+  PhysicalDefensePercentBonus: 0
+  MagicalAttackPercentBonus: 0
+  MagicalDefensePercentBonus: 0
   EquipmentType: 3

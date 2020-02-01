@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: 
   Icon: {fileID: 21300000, guid: 88b59ff07dc3b2e4398b20637b2ecc20, type: 3}
-  PhysicalAttack: 0
-  PhysicalDefense: 0
-  MagicalAttack: 0
-  MagicalDefense: 0
-  PhysicalAttackPercent: 0
-  PhysicalDefensePercent: 0
-  MagicalAttackPercent: 0
-  MagicalDefensePercent: 0
+  PhysicalAttackBonus: 1
+  PhysicalDefenseBonus: 1
+  MagicalAttackBonus: 1
+  MagicalDefenseBonus: 11
+  PhysicalAttackPercentBonus: 0
+  PhysicalDefensePercentBonus: 0
+  MagicalAttackPercentBonus: 0
+  MagicalDefensePercentBonus: 0
   EquipmentType: 2

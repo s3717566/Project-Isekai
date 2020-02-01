@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: sword 2
   Icon: {fileID: 21300000, guid: 929f9f9032799934cbd8405857744490, type: 3}
-  PhysicalAttack: 0
-  PhysicalDefense: 0
-  MagicalAttack: 0
-  MagicalDefense: 0
-  PhysicalAttackPercent: 0
-  PhysicalDefensePercent: 0
-  MagicalAttackPercent: 0
-  MagicalDefensePercent: 0
+  PhysicalAttackBonus: 10
+  PhysicalDefenseBonus: 0
+  MagicalAttackBonus: 10
+  MagicalDefenseBonus: 0
+  PhysicalAttackPercentBonus: 0
+  PhysicalDefensePercentBonus: 0
+  MagicalAttackPercentBonus: 0
+  MagicalDefensePercentBonus: 0
   EquipmentType: 0
