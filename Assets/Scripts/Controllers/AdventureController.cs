@@ -61,7 +61,7 @@ public class AdventureController : MonoBehaviour {
             Debug.Log(member.ToString());
         }
         // uiHarem.test();
-        // uiHarem.setHaremStorage (haremStorage);
+        uiHarem.setHaremStorage (haremStorage);
     }
     void Start () {
         items = new ItemController();
@@ -193,7 +193,7 @@ public class AdventureController : MonoBehaviour {
     void defeatEnemy() {
             currentEnemyDead = true;
             dropItem ();
-            Debug.Log (currentEnemy.getName() + " has been slain");
+            // Debug.Log (currentEnemy.getName() + " has been slain");
             spawnEnemy ();
             Debug.Log ("new enemy spawned is " + currentEnemy.getName ());
     }
@@ -223,11 +223,11 @@ public class AdventureController : MonoBehaviour {
         double mtotal = currentEnemy.getMagAttack () - magDefence;
         if (ptotal > 0) {
             health -= ptotal;
-            Debug.Log ("Player took " + ptotal + " p dmg");
+            // Debug.Log ("Player took " + ptotal + " p dmg");
         }
         if (mtotal > 0) {
             health -= mtotal;
-            Debug.Log ("Player took " + mtotal + " m dmg");
+            // Debug.Log ("Player took " + mtotal + " m dmg");
         }
     }
 

@@ -98,11 +98,11 @@ public class Enemy {
         double mtotal = mdmg - magDefence;
         if (ptotal > 0) {
             health -= ptotal;
-            Debug.Log ("Enemy took " + ptotal + " p dmg");
+            // Debug.Log ("Enemy took " + ptotal + " p dmg");
         }
         if (mtotal > 0) {
             health -= mtotal;
-            Debug.Log ("Enemy took " + mtotal + " m dmg");
+            // Debug.Log ("Enemy took " + mtotal + " m dmg");
         }
     }
 

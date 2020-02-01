@@ -10,12 +10,14 @@ public class HaremStorage {
     private List<Member> haremList;
 
     public HaremStorage () {
-        haremList = new List<Member> ();
+        haremList = new List<Member> () {
+            new Member(1, "02", "Dino girl"),
+            new Member(2, "Yaoyorozu", "Best girl"),
+            new Member(3, "Aqua", "Useless girl"),
+            new Member(4, "Raphtalia", "Raccoon girl"),
+        };
 
-        haremList.Add (new Member (1, "z2", "ooga booga"));
-        haremList.Add (new Member (2, "anime girl", "ooga booga"));
         Debug.Log ("harem list count: " + haremList.Count);
-
     }
 
     public void addToHarem (Member member) {

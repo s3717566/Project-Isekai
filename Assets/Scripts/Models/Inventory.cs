@@ -37,7 +37,7 @@ public class Inventory {
         inventoryList.Add (item);
         }
         OnItemListChanged.Invoke (this, EventArgs.Empty);
-        Debug.Log ("Added " + item.ToString () + " to list");
+        // Debug.Log ("Added " + item.ToString () + " to list");
     }
 
     public List<Item> getInventoryList () {
