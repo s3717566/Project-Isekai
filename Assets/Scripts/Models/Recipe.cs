@@ -1,26 +1,42 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Recipe
-{
-    private List<Item> requiredItems;
-    private Item outputItem;
+[Serializable]
+public struct ItemAmount {
+    public Item Item;
+    [Range (1, 999)]
+    public int Amount;
+}
 
-    public Recipe (List<Item> a, Item b)
-    {
-        this.requiredItems = a;
-        this.outputItem = b;
+[CreateAssetMenu]
+public class Recipe : ScriptableObject {
+    public List<ItemAmount> Materials;
+    public List<ItemAmount> Results;
+
+    public bool CanCraft (IItemContainer itemContainer) {
+        foreach (ItemAmount itemAmount in Materials) {
+            if (itemContainer.ItemCount (itemAmount.Item) < itemAmount.Amount) {
+                return false;
+            }
+        }
+        return true;
     }
 
-    public List<Item> getRequiredItems()
-    {
-        return requiredItems;
-    }
+    public void Craft (IItemContainer itemContainer) {
+        if (CanCraft (itemContainer)) {
+            foreach (ItemAmount itemAmount in Materials) {
+                for (int i = 0; i < itemAmount.Amount; i++) {
+                    itemContainer.RemoveItem (itemAmount.Item);
+                }
+            }
 
-    public Item getOutputItems()
-    {
-        return outputItem;
+            foreach (ItemAmount itemAmount in Results) {
+                for (int i = 0; i < itemAmount.Amount; i++) {
+                    itemContainer.AddItem (itemAmount.Item);
+                }
+            }
+        }
     }
-
 }
