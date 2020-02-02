@@ -10,7 +10,7 @@ public class InventoryManager : MonoBehaviour {
     // [SerializeField] ItemTooltip itemTooltip;
     [SerializeField] Image draggableItem;
 
-    private ItemSlot dragItemSlot;
+    private BaseItemSlot dragItemSlot;
 
     private void OnValidate () {
         // if (itemTooltip == null) {
@@ -44,32 +44,32 @@ public class InventoryManager : MonoBehaviour {
         equipmentPanel.OnDropEvent += Drop;
     }
 
-    private void Equip (ItemSlot itemSlot) {
+    private void Equip (BaseItemSlot itemSlot) {
         EquippableItem item = itemSlot.Item as EquippableItem;
         if (item != null) {
             Equip (item);
         }
     }
 
-    private void Unequip (ItemSlot itemSlot) {
+    private void Unequip (BaseItemSlot itemSlot) {
         EquippableItem item = itemSlot.Item as EquippableItem;
         if (item != null) {
             Unequip (item);
         }
     }
 
-    private void ShowTooltip (ItemSlot itemSlot) {
+    private void ShowTooltip (BaseItemSlot itemSlot) {
         EquippableItem item = itemSlot.Item as EquippableItem;
         if (item != null) {
             // itemTooltip.ShowTooltip(EquippableItem);
         }
     }
 
-    private void HideTooltip (ItemSlot itemSlot) {
+    private void HideTooltip (BaseItemSlot itemSlot) {
         // itemTooltip.HideTooltip();
     }
 
-    private void BeginDrag (ItemSlot itemSlot) {
+    private void BeginDrag (BaseItemSlot itemSlot) {
         if (itemSlot.Item != null) {
             dragItemSlot = itemSlot;
             draggableItem.sprite = itemSlot.Item.Icon;
@@ -78,19 +78,19 @@ public class InventoryManager : MonoBehaviour {
         }
     }
 
-    private void EndDrag (ItemSlot itemSlot) {
+    private void EndDrag (BaseItemSlot itemSlot) {
         dragItemSlot = null;
         draggableItem.enabled = false;
 
     }
 
-    private void Drag (ItemSlot itemSlot) {
+    private void Drag (BaseItemSlot itemSlot) {
         if (draggableItem.enabled) {
             draggableItem.transform.position = Input.mousePosition;
         }
     }
 
-    private void Drop (ItemSlot dropItemSlot) {
+    private void Drop (BaseItemSlot dropItemSlot) {
 
         if (dragItemSlot == null) return;
 
