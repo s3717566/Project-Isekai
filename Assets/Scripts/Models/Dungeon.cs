@@ -2,21 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dungeon
+[CreateAssetMenu]
+public class Dungeon : ScriptableObject
 {
-    int id;
-    string name;
-    string desc;
+    public int id;
+    public string name;
+    public string desc;
+    public Enemy[] Enemies;
+    private System.Random random = new System.Random ();
 
-    public int getId() { return id; }
-
-    public Dungeon(int id, string name, string desc) {
-        this.id = id;
-        this.name = name;
-        this.desc = desc;
-    }
-
-    public string getName() {
-        return name;
+    public Enemy ReturnRandomEnemy() {
+        int index = random.Next (Enemies.Length - 1);
+        Debug.Log("Returning the enemy: " + Enemies[index].ToString());
+        return Enemies[index];
     }
 }

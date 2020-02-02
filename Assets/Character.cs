@@ -8,12 +8,13 @@ public class Character : MonoBehaviour {
     public AdventureStat MagicalAttack;
     public AdventureStat MagicalDefense;
 
-    [SerializeField] StatPanel statPanel;
+    [SerializeField] StatPanel[] statPanels;
 
     private void Awake () {
-        PhysicalAttack.AddModifier(new StatModifier(5, StatModType.Flat) );
-        statPanel.SetStats (PhysicalAttack, PhysicalDefense, MagicalAttack, MagicalDefense);
-        statPanel.UpdateStatValues ();
+        for (int i = 0; i < statPanels.Length; i++) {
+        statPanels[i].SetStats (PhysicalAttack, PhysicalDefense, MagicalAttack, MagicalDefense);
+        statPanels[i].UpdateStatValues ();
+        }
     }
 
     public void Equip(EquippableItem item) {
@@ -22,5 +23,11 @@ public class Character : MonoBehaviour {
 
     public void Unequip(EquippableItem item) {
         item.Unequip(this);
+    }
+
+    public void UpdateStatPanels() {
+        for (int i = 0; i < statPanels.Length; i++) {
+        statPanels[i].UpdateStatValues ();
+        }
     }
 }

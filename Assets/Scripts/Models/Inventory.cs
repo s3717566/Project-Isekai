@@ -15,6 +15,8 @@ public event Action<Item> OnItemRightClickedEvent;
 private void Start() {
     for (int i = 0; i < itemSlots.Length; i++) {
         itemSlots[i].OnRightClickEvent += OnItemRightClickedEvent;
+
+        RefreshUI();
     }
 }
     private void OnValidate () {

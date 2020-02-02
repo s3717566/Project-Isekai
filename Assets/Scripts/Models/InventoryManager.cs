@@ -6,12 +6,10 @@ public class InventoryManager : MonoBehaviour {
     [SerializeField] Inventory inventory;
     [SerializeField] EquipmentPanel equipmentPanel;
     [SerializeField] Character character;
-    [SerializeField] StatPanel statPanel;
 
     private void Awake () {
         inventory.OnItemRightClickedEvent += EquipFromInventory;
         equipmentPanel.OnItemRightClickedEvent += UnequipFromEquipPanel;
-
     }
 
     private void EquipFromInventory (Item item) {
@@ -33,11 +31,11 @@ public class InventoryManager : MonoBehaviour {
                 if (previousItem != null) {
                     inventory.AddItem (previousItem);
                     previousItem.Unequip (character);
-                    statPanel.UpdateStatValues ();
+                    character.UpdateStatPanels();
                 }
                 item.Equip (character);
 
-                statPanel.UpdateStatValues ();
+                    character.UpdateStatPanels();
             } else {
                 inventory.AddItem (item);
             }
@@ -47,7 +45,7 @@ public class InventoryManager : MonoBehaviour {
     public void Unequip (EquippableItem item) {
         if (!inventory.IsFull () && equipmentPanel.RemoveItem (item)) {
             item.Unequip (character);
-            statPanel.UpdateStatValues ();
+            character.UpdateStatPanels();
             inventory.AddItem (item);
         }
     }
