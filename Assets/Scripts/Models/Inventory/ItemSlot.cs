@@ -5,7 +5,10 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ItemSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler, IDragHandler, IBeginDragHandler, IEndDragHandler, IDropHandler {
+
+    //item slot are the empty slots where items are held. This is a UI and interaction component. Interactions such as clicking are registered here but the logic for the interactions is done in another class.
     [SerializeField] Image image;
+    [SerializeField] Text amountText;
 
     public event Action<ItemSlot> OnPointerEnterEvent;
     public event Action<ItemSlot> OnPointerExitEvent;
@@ -32,10 +35,24 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
             }
         }
     }
+    private int _amount;
+    public int Amount {
+        get { return _amount; }
+        set {
+            _amount = value;
+            amountText.enabled = _item != null && _item.MaximumStacks > 1 && _amount > 1;
+            if (amountText.enabled) {
+                amountText.text = _amount.ToString();
+            }
+        }
+    }
 
     protected virtual void OnValidate () {
         if (image == null) {
             image = GetComponent<Image> ();
+        }
+                if (amountText == null) {
+            amountText = GetComponentInChildren<Text> ();
         }
     }
 

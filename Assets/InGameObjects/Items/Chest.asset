@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268da3dbcc5242f4986811532ec7c888, type: 3}
   m_Name: Chest
   m_EditorClassIdentifier: 
-  ItemName: 
+  id: f6769999ebe6c2a4e8f0e1bec733265c
+  ItemName: Chest
+  MaximumStacks: 1
   Icon: {fileID: 21300000, guid: 88b59ff07dc3b2e4398b20637b2ecc20, type: 3}
   PhysicalAttackBonus: 1
   PhysicalDefenseBonus: 1

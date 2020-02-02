@@ -5,6 +5,8 @@ using System.Collections.ObjectModel;
 [Serializable]
 public class AdventureStat {
 
+    //adventure stats is where the stats are stored. Modifiers are stat bonuses such as things from equipping weapons.
+
     public float BaseValue;
 
     public virtual float Value {

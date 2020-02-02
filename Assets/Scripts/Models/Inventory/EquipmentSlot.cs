@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EquipmentSlot : ItemSlot {
+
+    //same as an item slot, except can be equipped.
     public EquipmentType EquipmentType;
 
     protected override void OnValidate () {

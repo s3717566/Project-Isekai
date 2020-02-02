@@ -16,6 +16,7 @@ public class EquipmentPanel : MonoBehaviour {
     public event Action<ItemSlot> OnDropEvent;
 
 private void Start() {
+    //this for loop instantiates all the interaction events.
     for (int i = 0; i < equipmentSlots.Length; i++) {
             equipmentSlots[i].OnPointerEnterEvent += OnPointerEnterEvent;
             equipmentSlots[i].OnPointerExitEvent += OnPointerExitEvent;
