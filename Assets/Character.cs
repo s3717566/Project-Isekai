@@ -9,12 +9,15 @@ public class Character : MonoBehaviour {
     public AdventureStat MagicalDefense;
 
     [SerializeField] StatPanel[] statPanels;
+    [SerializeField] private UI_Harem uiHarem;
+    public HaremStorage haremStorage;
 
     private void Awake () {
         for (int i = 0; i < statPanels.Length; i++) {
         statPanels[i].SetStats (PhysicalAttack, PhysicalDefense, MagicalAttack, MagicalDefense);
         statPanels[i].UpdateStatValues ();
         }
+        uiHarem.setHaremStorage (haremStorage);
     }
 
     public void Equip(EquippableItem item) {
@@ -30,4 +33,5 @@ public class Character : MonoBehaviour {
         statPanels[i].UpdateStatValues ();
         }
     }
+    
 }

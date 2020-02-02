@@ -4446,6 +4446,8 @@ MonoBehaviour:
   statPanels:
   - {fileID: 1192939018}
   - {fileID: 279248867}
+  uiHarem: {fileID: 1690784606}
+  haremStorage: {fileID: 11400000, guid: f4cabcf2144a56e4ab2cd06056edac1e, type: 2}
 --- !u!1 &753297370
 GameObject:
   m_ObjectHideFlags: 0
@@ -7729,7 +7731,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1287624711
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13758,7 +13760,6 @@ MonoBehaviour:
   Dungeons:
   - {fileID: 11400000, guid: 9c596cc3666d98f49a21bd2b9f9af282, type: 2}
   inventory: {fileID: 919839319}
-  uiHarem: {fileID: 1690784606}
   character: {fileID: 752970639}
   enemyStatPanel: {fileID: 2043388013}
 --- !u!1 &2144296788

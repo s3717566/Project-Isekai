@@ -41,7 +41,6 @@ public class AdventureController : MonoBehaviour {
     private Dungeon currentDungeon;
 
     [SerializeField] private Inventory inventory;
-    [SerializeField] private UI_Harem uiHarem;
     [SerializeField] private Character character;
     [SerializeField] private StatPanel enemyStatPanel;
 
@@ -52,8 +51,8 @@ public class AdventureController : MonoBehaviour {
     List<Dungeon> dungeonList = new List<Dungeon> ();
 
     void Awake () {
-        haremStorage = new HaremStorage();
-        uiHarem.setHaremStorage (haremStorage);
+        // haremStorage = new HaremStorage();
+        // uiHarem.setHaremStorage (haremStorage);
     }
 
     void Start () {
