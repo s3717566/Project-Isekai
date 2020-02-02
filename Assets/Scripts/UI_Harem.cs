@@ -57,7 +57,7 @@ public class UI_Harem : MonoBehaviour {
             }
 
             foreach (Member member in haremStorage.getHaremList ()) {
-                if (member.getName().Equals("02")) {
+                if (member.Name.Equals("02")) {
                     continue;
                 }
                 Debug.Log ("Cloning profile template");
@@ -68,11 +68,11 @@ public class UI_Harem : MonoBehaviour {
 
                 //Get image display and set to resource image
                 Image image = itemSlotRectTransform.Find ("imgProfile").GetComponent<Image> ();
-                image.sprite = Resources.Load<Sprite>(member.getName()) as Sprite;
+                image.sprite = member.Sprite;
 
                 //Get text display and set to waifu name
                 Text text = itemSlotRectTransform.Find ("txtProfile").GetComponent<Text>();
-                text.text = member.getName();
+                text.text = member.Name;
             }
         }
     }
