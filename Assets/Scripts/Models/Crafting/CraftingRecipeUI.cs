@@ -3,11 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CraftingRecipeUI : MonoBehaviour {
+
+    }
+    /*
     [Header ("References")]
     // [SerializeField] RectTransform arrowParent;
     [SerializeField] BaseItemSlot[] materialSlots;
     [SerializeField] BaseItemSlot[] resultSlots;
     [SerializeField] BaseItemSlot[] recipeSlots;
+
+    public Transform RequirementSlotHolder;
+    public Transform OutputSlotHolder;
+    //[SerializeField] Transform RecipeSlotHolder;
+
+    //these will be passed to it by parent script
+    //BaseItemSlot[] requirementSlots = RequirementSlotHolder.GetComponentsInChildren<BaseItemSlot>;
+    //BaseItemSlot[] outputSlots = OutputSlotHolder.GetComponentsInChildren<BaseItemSlot>;
+    
+        //this doesnt need to be an array
+    BaseItemSlot[] RecipeSlot;
 
     /*
     Create (instantiate?) recipeButtons in recipe slots (maybe hard code them in, doesn't sound too bad)
@@ -21,7 +35,7 @@ crafting recipe UI holds all the values needed
 crafting recipe UI is attached to only the recipeSlots
 The panel requirements is passed through by public reference and accessed by children
 the output is passed in by public reference
-    */ 
+     
 //itemSlots
     [Header ("Public Variables")]
     public ItemContainer ItemContainer;
@@ -36,12 +50,12 @@ the output is passed in by public reference
     public event Action<BaseItemSlot> OnPointerExitEvent;
 
     private void OnValidate () {
-        materialSlots = transform.Find ("pnlRequirements").Find ("Crafting Item Slot").GetComponentsInChildren<BaseItemSlot> (includeInactive: true);
+        //materialSlots = transform.Find ("pnlRequirements").Find ("Crafting Item Slot").GetComponentsInChildren<BaseItemSlot> (includeInactive: true);
         //is a list but currently UI is suited to only display one output
         // resultSlots = transform.Find ("pnlOutput").Find ("Output Slot").GetComponentsInChildren<BaseItemSlot> (includeInactive: true);
         //same as result slot, its a long way down
         // recipeSlots = transform.Find ("pnlRecipes").Find ("Scroll View").Find ("Viewport").Find ("Content").Find ("Crafting Slot").GetComponentsInChildren<BaseItemSlot> (includeInactive: true);
-
+        RecipeSlot = transform.GetComponentsInChildren<BaseItemSlot>();
     }
 
     private void Start () {
@@ -72,15 +86,20 @@ the output is passed in by public reference
         craftingRecipe = newCraftingRecipe;
 
         if (craftingRecipe != null) {
-            SetSlots (craftingRecipe.Materials, materialSlots);
+            //SetSlots (craftingRecipe.Materials, materialSlots);
             // arrowParent.SetSiblingIndex(slotIndex);
-            SetSlots (craftingRecipe.Results,  resultSlots);
-            SetSlots (craftingRecipe.Results,  recipeSlots);
+            //SetSlots (craftingRecipe.Results,  resultSlots);
+            //SetSlots (craftingRecipe.Results,  recipeSlots);
 
 //sets subsequent slots to inactive - pls fix
             // for (int i = slotIndex; i < materialSlots.Length; i++) {
             //     materialSlots[i].transform.parent.gameObject.SetActive (false);
             // }
+
+            //you could probably do the following part generically and i dont think it would be hard, im too lazy rn
+            UpdateRequirementSlotHolder(craftingRecipe.Materials);
+            UpdateOutputSlotHolder(craftingRecipe.Results);
+            UpdateOutputSlotHolder(craftingRecipe.Results);
 
             gameObject.SetActive (true);
         } else {
@@ -90,8 +109,8 @@ the output is passed in by public reference
 
     private void SetSlots (IList<ItemAmount> itemAmountList, BaseItemSlot[] baseItemSlots) {
         for (int i = 0; i < itemAmountList.Count; i++) {
-            ItemAmount itemAmount = itemAmountList[i];
-            BaseItemSlot itemSlot = baseItemSlots[i];
+            ItemAmount itemAmount = itemAmountList[i]; //array from recipe
+            BaseItemSlot itemSlot = baseItemSlots[i]; //array from transform
 
             itemSlot.Item = itemAmount.Item;
             itemSlot.Amount = itemAmount.Amount;
@@ -103,5 +122,45 @@ the output is passed in by public reference
         Debug.Log(craftingRecipe.ToString());
     }
 
-    
-}
+    public void UpdateRequirementSlotHolder(IList<ItemAmount> itemAmountList)
+    {
+        //for every material
+        //set the requirement slots to it
+        //null the rest
+       for (int i = 0; i < itemAmountList.Length; i++) {
+            ItemAmount itemAmount = itemAmountList[i]; //array from recipe
+            BaseItemSlot itemSlot = requirementSlots[i]; //array from transform
+
+            //main logic
+            itemSlot.Item = itemAmount.Item;
+            itemSlot.Amount = itemAmount.Amount;
+            //itemSlot.transform.parent.gameObject.SetActive (true);
+            itemSlot.gameObject.SetActive (true);
+
+        }
+
+              for (int i = itemAmountList.Length; i < requirementSlots.Length; i++) {
+                requirementSlots[i].gameObject.SetActive(false);
+
+
+            }
+
+
+    }
+
+    public void UpdateOutputSlotHolder(IList<ItemAmount> itemAmountList)
+    {
+        //for every material
+        //set the requirement slots to it
+        //null the rest
+       for (int i = 0; i < 1; i++) { //there is only 1 output slot, but since its a list i thought i better keep the capability to output a list there
+            ItemAmount itemAmount = itemAmountList[i]; //array from recipe
+            BaseItemSlot itemSlot = requirementSlots[i]; //array from transform
+
+            //main logic
+            itemSlot.Item = itemAmount.Item;
+            itemSlot.Amount = itemAmount.Amount;
+            //itemSlot.transform.parent.gameObject.SetActive (true);
+        }
+    }
+}   */
