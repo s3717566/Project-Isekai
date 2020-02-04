@@ -58,6 +58,7 @@ public abstract class ItemContainer : MonoBehaviour, IItemContainer {
     }
 
     public Item RemoveItem (string itemID) {
+        Debug.Log("Removing item");
         for (int i = 0; i < itemSlots.Length; i++) {
             Item item = itemSlots[i].Item;
             if (item != null && item.ID == itemID) {
@@ -83,7 +84,8 @@ public abstract class ItemContainer : MonoBehaviour, IItemContainer {
     public int ItemCount (string itemID) {
         int number = 0;
         for (int i = 0; i < itemSlots.Length; i++) {
-            if (itemSlots[i].Item.ID == itemID) {
+            Item item = itemSlots[i].Item;
+            if (item != null && item.ID == itemID) { 
                 number++;
             }
         }

@@ -14,41 +14,41 @@ public class UI_Harem : MonoBehaviour {
     public void setHaremStorage (HaremStorage haremStorage) {
         haremStorage.debugAll();
         this.haremStorage = haremStorage;
-        Debug.Log ("storage set successfully");
+        //Debug.Log ("storage set successfully");
         haremStorage.OnHaremListChanged += Harem_OnHaremListChanged;
-        Debug.Log ("weird onclick thing done");
+        //Debug.Log ("weird onclick thing done");
         refreshHarem ();
-        Debug.Log ("harem set and refreshed");
+        //Debug.Log ("harem set and refreshed");
 
     }
 
     private void Harem_OnHaremListChanged (object sender, System.EventArgs e) {
-        Debug.Log ("Harem_OnHaremListChanged triggered");
+        //Debug.Log ("Harem_OnHaremListChanged triggered");
         refreshHarem ();
     }
 
     private void Awake () {
-        Debug.Log("UI_HAREM is trying to wake up");
+        //Debug.Log("UI_HAREM is trying to wake up");
         haremContent = transform;
         profileTemplate = haremContent.Find ("profileTemplate");
-        Debug.Log("UI_HAREM has awoken");
+        //Debug.Log("UI_HAREM has awoken");
     }
 
     void OnEnable () {
-        Debug.Log ("harem enabled");
+        //Debug.Log ("harem enabled");
         enabled = true;
         refreshHarem();
     }
 
     void OnDisable () {
-        Debug.Log ("harem disabled");
+        //Debug.Log ("harem disabled");
         enabled = false;
     }
 
     private void refreshHarem () {
         if (enabled) {
             foreach (Transform child in haremContent) {
-                Debug.Log ("Child: " + child);
+                //Debug.Log ("Child: " + child);
                 if (child == profileTemplate) {
                     continue;
                 } else {
@@ -60,7 +60,7 @@ public class UI_Harem : MonoBehaviour {
                 if (member.Name.Equals("02")) {
                     continue;
                 }
-                Debug.Log ("Cloning profile template");
+                //Debug.Log ("Cloning profile template");
 
                 //Get rectangle that displays info for a waifu
                 RectTransform itemSlotRectTransform = Instantiate (profileTemplate, haremContent).GetComponent<RectTransform> ();

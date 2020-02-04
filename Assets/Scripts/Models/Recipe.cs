@@ -31,6 +31,7 @@ public bool CanCraft(IItemContainer itemContainer)
 			}
 		}
 		return true;
+
 	}
 
 	private bool HasSpace(IItemContainer itemContainer)
@@ -48,9 +49,9 @@ public bool CanCraft(IItemContainer itemContainer)
 
     public void Craft (IItemContainer itemContainer) {
         if (CanCraft (itemContainer)) {
-            foreach (ItemAmount itemAmount in Materials) {
+			foreach (ItemAmount itemAmount in Materials) {
                 for (int i = 0; i < itemAmount.Amount; i++) {
-                    Item oldItem = itemContainer.RemoveItem (itemAmount.Item.ID);
+					Item oldItem = itemContainer.RemoveItem (itemAmount.Item.ID);
                     oldItem.Destroy();
                 }
             }
@@ -64,6 +65,6 @@ public bool CanCraft(IItemContainer itemContainer)
     }
 
     public override string ToString() {
-        return "This recipe is to make a " + Results[0];
+        return "This recipe is to make a " + Results[0].Item.ToString();
     }
 }

@@ -97,7 +97,7 @@ public class AdventureController : MonoBehaviour {
 
     void dropItem () {
         Item itemCopy = currentEnemy.ItemDrop.GetCopy ();
-        Debug.Log("Adding a " + itemCopy.ToString());
+        //Debug.Log("Adding a " + itemCopy.ToString());
         inventory.AddItem (itemCopy);
     }
 
@@ -116,7 +116,7 @@ public class AdventureController : MonoBehaviour {
         currentEnemyDead = true;
         dropItem ();
         spawnEnemy ();
-        Debug.Log ("new enemy spawned is " + currentEnemy.Name);
+        //Debug.Log ("new enemy spawned is " + currentEnemy.Name);
     }
 
     public void loseHealthCalc () {

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae4ecab01b04b0747822003943966753, type: 3}
-  m_Name: New Recipe
+  m_Name: Leggings
   m_EditorClassIdentifier: 
   Materials:
   - Item: {fileID: 11400000, guid: 379ac206a02541c48a425de25547d8ef, type: 2}
-    Amount: 0
-  - Item: {fileID: 11400000, guid: 8912ce3ad491cfc408f85104be6a067a, type: 2}
-    Amount: 0
+    Amount: 1
+  - Item: {fileID: 11400000, guid: 379ac206a02541c48a425de25547d8ef, type: 2}
+    Amount: 1
   Results:
-  - Item: {fileID: 11400000, guid: 319f7434dadb4194d96dff0674bb1ad5, type: 2}
-    Amount: 0
+  - Item: {fileID: 11400000, guid: 379ac206a02541c48a425de25547d8ef, type: 2}
+    Amount: 1

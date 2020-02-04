@@ -7,7 +7,7 @@ public class IconController : MonoBehaviour {
 
     private void Awake () {
         Instance = this;
-        Debug.Log("icon controller has awoken.");
+        //Debug.Log("icon controller has awoken.");
     }
 
     public Sprite castleSprite;

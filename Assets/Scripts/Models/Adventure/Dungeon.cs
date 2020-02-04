@@ -13,7 +13,7 @@ public class Dungeon : ScriptableObject
 
     public Enemy ReturnRandomEnemy() {
         int index = random.Next (Enemies.Length);
-        Debug.Log("Returning the enemy: " + Enemies[index].ToString());
+        //Debug.Log("Returning the enemy: " + Enemies[index].ToString());
         return Enemies[index];
     }
 }
