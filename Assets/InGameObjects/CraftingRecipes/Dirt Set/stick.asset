@@ -15,8 +15,8 @@ MonoBehaviour:
   Name: 
   Desc: 
   Materials:
-  - Item: {fileID: 11400000, guid: 8051de3669befa34d82041cfefa6b4a2, type: 2}
-    Amount: 2
-  Results:
   - Item: {fileID: 11400000, guid: cb7dc76e5a6b3a24591cd4481d6242c8, type: 2}
-    Amount: 4
+    Amount: 9
+  Results:
+  - Item: {fileID: 11400000, guid: 80c201c5166cd1040b664919c1705ec5, type: 2}
+    Amount: 1

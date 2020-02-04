@@ -115,6 +115,7 @@ public class CraftingRecipeUI : MonoBehaviour
             //you could probably do the following part generically and i dont think it would be hard, im too lazy rn
             UpdateRequirementSlotHolder(craftingRecipe.Materials);
             UpdateOutputSlotHolder(craftingRecipe.Results);
+            UpdateRecipeSlotHolder(craftingRecipe.Results);
             setButton();
             gameObject.SetActive(true);
         }
@@ -165,15 +166,13 @@ public class CraftingRecipeUI : MonoBehaviour
 
     public void UpdateRecipeSlotHolder(IList<ItemAmount> itemAmountList)
     {
-        BaseItemSlot itemSlot;
         ItemAmount itemFromRecipe = itemAmountList[0];
         if (recipeSlot != null)
         {
-            itemSlot = recipeSlot;
-            itemSlot.Item = itemFromRecipe.Item;
-            itemSlot.Amount = itemFromRecipe.Amount;
+            recipeSlot.Item = itemFromRecipe.Item;
+            recipeSlot.Amount = itemFromRecipe.Amount;
         }
-        //Debug.Log("setting this item as recipe slot: " + itemFromRecipe.Item.ToString());
+        Debug.Log("setting this item as recipe slot: " + itemFromRecipe.Item.ToString());
 
         
     }
