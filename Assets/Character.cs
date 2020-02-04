@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Character : MonoBehaviour {
+
+    //character is where the main player details are stored. Some things will need to be moved here. It joins the inventoryManager to the statPanels.
     public AdventureStat PhysicalAttack;
     public AdventureStat PhysicalDefense;
     public AdventureStat MagicalAttack;

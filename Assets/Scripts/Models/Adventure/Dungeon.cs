@@ -12,8 +12,8 @@ public class Dungeon : ScriptableObject
     private System.Random random = new System.Random ();
 
     public Enemy ReturnRandomEnemy() {
-        int index = random.Next (Enemies.Length - 1);
-        Debug.Log("Returning the enemy: " + Enemies[index].ToString());
+        int index = random.Next (Enemies.Length);
+        //Debug.Log("Returning the enemy: " + Enemies[index].ToString());
         return Enemies[index];
     }
 }

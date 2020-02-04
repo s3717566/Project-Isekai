@@ -24,8 +24,8 @@ MonoBehaviour:
     BaseValue: 5
   MagicalDefense:
     BaseValue: 5
-  MaxHealth: 100
-  Health: 100
+  MaxHealth: 20
+  Health: 3.1231970004737377
   HealthRegen: 2
   Sprite: {fileID: 21300000, guid: 7de9fbb9a05db43fabf8fe535f7e47df, type: 3}
-  ItemDrop: {fileID: 11400000, guid: f6b2edfe1de2c594493c4e0a69338591, type: 2}
+  ItemDrop: {fileID: 11400000, guid: 379ac206a02541c48a425de25547d8ef, type: 2}

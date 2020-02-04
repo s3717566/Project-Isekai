@@ -7,11 +7,24 @@ public class EquipmentPanel : MonoBehaviour {
     [SerializeField] Transform equipmentSlotsParent;
     [SerializeField] EquipmentSlot[] equipmentSlots;
 
-public event Action<Item> OnItemRightClickedEvent;
+    public event Action<BaseItemSlot> OnPointerEnterEvent;
+    public event Action<BaseItemSlot> OnPointerExitEvent;
+    public event Action<BaseItemSlot> OnRightClickEvent;
+    public event Action<BaseItemSlot> OnBeginDragEvent;
+    public event Action<BaseItemSlot> OnEndDragEvent;
+    public event Action<BaseItemSlot> OnDragEvent;
+    public event Action<BaseItemSlot> OnDropEvent;
 
 private void Start() {
+    //this for loop instantiates all the interaction events.
     for (int i = 0; i < equipmentSlots.Length; i++) {
-        equipmentSlots[i].OnRightClickEvent += OnItemRightClickedEvent;
+            equipmentSlots[i].OnPointerEnterEvent += OnPointerEnterEvent;
+            equipmentSlots[i].OnPointerExitEvent += OnPointerExitEvent;
+            equipmentSlots[i].OnRightClickEvent += OnRightClickEvent;
+            equipmentSlots[i].OnBeginDragEvent += OnBeginDragEvent;
+            equipmentSlots[i].OnEndDragEvent += OnEndDragEvent;
+            equipmentSlots[i].OnDragEvent += OnDragEvent;
+            equipmentSlots[i].OnDropEvent += OnDropEvent;
     }
 }
 

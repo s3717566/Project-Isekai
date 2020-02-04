@@ -1,26 +1,70 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Recipe
-{
-    private List<Item> requiredItems;
-    private Item outputItem;
+[Serializable]
+public struct ItemAmount {
+    public Item Item;
+    [Range (1, 999)]
+    public int Amount;
+}
 
-    public Recipe (List<Item> a, Item b)
-    {
-        this.requiredItems = a;
-        this.outputItem = b;
+[CreateAssetMenu]
+public class Recipe : ScriptableObject {
+    public List<ItemAmount> Materials;
+    public List<ItemAmount> Results;
+
+public bool CanCraft(IItemContainer itemContainer)
+	{
+		return HasMaterials(itemContainer) && HasSpace(itemContainer);
+	}
+
+	private bool HasMaterials(IItemContainer itemContainer)
+	{
+		foreach (ItemAmount itemAmount in Materials)
+		{
+			if (itemContainer.ItemCount(itemAmount.Item.ID) < itemAmount.Amount)
+			{
+				Debug.LogWarning("You don't have the required materials.");
+				return false;
+			}
+		}
+		return true;
+
+	}
+
+	private bool HasSpace(IItemContainer itemContainer)
+	{
+		foreach (ItemAmount itemAmount in Results)
+		{
+			if (!itemContainer.CanAddItem(itemAmount.Item, itemAmount.Amount))
+			{
+				Debug.LogWarning("Your inventory is full.");
+				return false;
+			}
+		}
+		return true;
+	}
+
+    public void Craft (IItemContainer itemContainer) {
+        if (CanCraft (itemContainer)) {
+			foreach (ItemAmount itemAmount in Materials) {
+                for (int i = 0; i < itemAmount.Amount; i++) {
+					Item oldItem = itemContainer.RemoveItem (itemAmount.Item.ID);
+                    oldItem.Destroy();
+                }
+            }
+
+            foreach (ItemAmount itemAmount in Results) {
+                for (int i = 0; i < itemAmount.Amount; i++) {
+                    itemContainer.AddItem (itemAmount.Item.GetCopy());
+                }
+            }
+        }
     }
 
-    public List<Item> getRequiredItems()
-    {
-        return requiredItems;
+    public override string ToString() {
+        return "This recipe is to make a " + Results[0].Item.ToString();
     }
-
-    public Item getOutputItems()
-    {
-        return outputItem;
-    }
-
 }

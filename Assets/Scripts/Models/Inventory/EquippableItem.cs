@@ -27,6 +27,14 @@ public class EquippableItem : Item {
 
     public EquipmentType EquipmentType;
 
+    public override Item GetCopy () {
+        return Instantiate (this);
+    }
+
+    public override void Destroy () {
+        Destroy (this);
+    }
+
     public void Equip (Character c) {
         if (PhysicalAttackBonus != 0)
             c.PhysicalAttack.AddModifier (new StatModifier (PhysicalAttackBonus, StatModType.Flat, this));

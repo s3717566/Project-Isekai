@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class StatPanel : MonoBehaviour {
+    
+    //the stat panel is the UI panel showing all the stats for both player and enemy.
     [SerializeField] StatDisplay[] statDisplays;
     [SerializeField] string[] statNames;
     private AdventureStat[] stats;
