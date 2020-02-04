@@ -10,16 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 268da3dbcc5242f4986811532ec7c888, type: 3}
-  m_Name: Leggings
+  m_Name: Dirt shoes
   m_EditorClassIdentifier: 
-  ItemName: Legg
-  Icon: {fileID: 21300000, guid: d45135cd7aecb15478d6e074c828df48, type: 3}
-  PhysicalAttackBonus: 3
-  PhysicalDefenseBonus: 1
-  MagicalAttackBonus: 2
-  MagicalDefenseBonus: 4
+  id: 8482874
+  ItemName: dirt shoes
+  Desc: calling these 'shoes' is a bit of a stretch, though you do get a good kick
+  MaximumStacks: 1
+  Icon: {fileID: 21300000, guid: c93e761a2c7596042990783ad0a6f6db, type: 3}
+  PhysicalAttackBonus: 1
+  PhysicalDefenseBonus: 3
+  MagicalAttackBonus: 0
+  MagicalDefenseBonus: 0
   PhysicalAttackPercentBonus: 0
   PhysicalDefensePercentBonus: 0
   MagicalAttackPercentBonus: 0
   MagicalDefensePercentBonus: 0
-  EquipmentType: 3
+  EquipmentType: 4

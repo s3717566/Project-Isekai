@@ -12,7 +12,7 @@ public class CraftingRecipeUI : MonoBehaviour
     Button craftButton;
 
     //this doesnt need to be an array
-    BaseItemSlot[] recipeSlot;
+    BaseItemSlot recipeSlot;
 
     /*
     Create (instantiate?) recipeButtons in recipe slots (maybe hard code them in, doesn't sound too bad)
@@ -51,7 +51,7 @@ public class CraftingRecipeUI : MonoBehaviour
 
     private void OnValidate()
     {
-        recipeSlot = transform.GetComponentsInChildren<BaseItemSlot>();
+        recipeSlot = transform.GetComponent<BaseItemSlot>();
     }
 
     private void setButton()
@@ -165,12 +165,17 @@ public class CraftingRecipeUI : MonoBehaviour
 
     public void UpdateRecipeSlotHolder(IList<ItemAmount> itemAmountList)
     {
-        BaseItemSlot itemSlot = recipeSlot[0];
+        BaseItemSlot itemSlot;
         ItemAmount itemFromRecipe = itemAmountList[0];
+        if (recipeSlot != null)
+        {
+            itemSlot = recipeSlot;
+            itemSlot.Item = itemFromRecipe.Item;
+            itemSlot.Amount = itemFromRecipe.Amount;
+        }
         //Debug.Log("setting this item as recipe slot: " + itemFromRecipe.Item.ToString());
 
-        itemSlot.Item = itemFromRecipe.Item;
-        itemSlot.Amount = itemFromRecipe.Amount;
+        
     }
 
     public override string ToString()

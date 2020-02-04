@@ -27,14 +27,13 @@ public class Inventory : ItemContainer, IItemContainer {
             itemSlots[i].OnDragEvent += OnDragEvent;
             itemSlots[i].OnDropEvent += OnDropEvent;
         }
-        SetStartingItems ();
     }
     private void OnValidate () {
         if (itemsParent != null) {
             itemSlots = itemsParent.GetComponentsInChildren<ItemSlot> ();
+            SetStartingItems();
         }
 
-        SetStartingItems ();
     }
 
     //only for debugging purposes

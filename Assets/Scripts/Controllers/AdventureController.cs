@@ -36,9 +36,9 @@ public class AdventureController : MonoBehaviour {
 
     void Start () {
 
-        health = 500;
-        maxHealth = 500;
-        healthRegen = 20;
+        health = 100;
+        maxHealth = 100;
+        healthRegen = 1;
 
         currentDungeon = Dungeons[0];
         spawnEnemy ();
@@ -140,5 +140,18 @@ public class AdventureController : MonoBehaviour {
     public void regen () {
         if (health < maxHealth) { health += (healthRegen * Time.deltaTime); }
         if (!currentEnemyDead && currentEnemy.Health < currentEnemy.MaxHealth) { currentEnemy.gainHealth (currentEnemy.HealthRegen * Time.deltaTime); }
+    }
+
+    public void flee()
+    {
+        Debug.Log("has fleed");
+        isAttacking = false;
+        currentEnemyDead = true;
+    }
+
+    public void attack()
+    {
+        isAttacking = true;
+        spawnEnemy();
     }
 }

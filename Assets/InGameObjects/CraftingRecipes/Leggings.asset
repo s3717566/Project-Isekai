@@ -13,10 +13,8 @@ MonoBehaviour:
   m_Name: Leggings
   m_EditorClassIdentifier: 
   Materials:
-  - Item: {fileID: 11400000, guid: 379ac206a02541c48a425de25547d8ef, type: 2}
-    Amount: 1
-  - Item: {fileID: 11400000, guid: 379ac206a02541c48a425de25547d8ef, type: 2}
-    Amount: 1
+  - Item: {fileID: 11400000, guid: cd8a45b072085fb43a787036ad77afee, type: 2}
+    Amount: 6
   Results:
   - Item: {fileID: 11400000, guid: 379ac206a02541c48a425de25547d8ef, type: 2}
-    Amount: 1
+    Amount: 246
