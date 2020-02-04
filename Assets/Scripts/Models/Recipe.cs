@@ -12,6 +12,8 @@ public struct ItemAmount {
 
 [CreateAssetMenu]
 public class Recipe : ScriptableObject {
+	public string Name;
+	public string Desc;
     public List<ItemAmount> Materials;
     public List<ItemAmount> Results;
 
@@ -22,8 +24,11 @@ public bool CanCraft(IItemContainer itemContainer)
 
 	private bool HasMaterials(IItemContainer itemContainer)
 	{
+
 		foreach (ItemAmount itemAmount in Materials)
 		{
+			Debug.Log(itemContainer.ItemCount(itemAmount.Item.ID));
+			
 			if (itemContainer.ItemCount(itemAmount.Item.ID) < itemAmount.Amount)
 			{
 				Debug.LogWarning("You don't have the required materials.");
@@ -48,7 +53,8 @@ public bool CanCraft(IItemContainer itemContainer)
 	}
 
     public void Craft (IItemContainer itemContainer) {
-        if (CanCraft (itemContainer)) {
+		if (CanCraft (itemContainer)) {
+			Debug.Log("I can craft!");
 			foreach (ItemAmount itemAmount in Materials) {
                 for (int i = 0; i < itemAmount.Amount; i++) {
 					Item oldItem = itemContainer.RemoveItem (itemAmount.Item.ID);

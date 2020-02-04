@@ -28,4 +28,4 @@ MonoBehaviour:
   Health: 15
   HealthRegen: 1
   Sprite: {fileID: 21300000, guid: 2b490c7e84b46fc4c8c3da19b41ae687, type: 3}
-  ItemDrop: {fileID: 11400000, guid: 8912ce3ad491cfc408f85104be6a067a, type: 2}
+  ItemDrop: {fileID: 11400000, guid: cd8a45b072085fb43a787036ad77afee, type: 2}

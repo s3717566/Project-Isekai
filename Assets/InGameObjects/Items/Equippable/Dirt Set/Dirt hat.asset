@@ -10,16 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 268da3dbcc5242f4986811532ec7c888, type: 3}
-  m_Name: Sword
+  m_Name: Dirt hat
   m_EditorClassIdentifier: 
-  ItemName: sword1
-  Icon: {fileID: 21300000, guid: a9541c0674db81e4ca22e5883e99c93e, type: 3}
-  PhysicalAttackBonus: 5
-  PhysicalDefenseBonus: 5
-  MagicalAttackBonus: 7
-  MagicalDefenseBonus: 6
+  id: 1448418
+  ItemName: 
+  Desc: not sure why you did this, but it accidentally blocks magic from affecting
+    your brain, so good job i guess
+  MaximumStacks: 1
+  Icon: {fileID: 21300000, guid: 0408689fba466ca48a388aae938b4da5, type: 3}
+  PhysicalAttackBonus: 0
+  PhysicalDefenseBonus: 2
+  MagicalAttackBonus: 0
+  MagicalDefenseBonus: 2
   PhysicalAttackPercentBonus: 0
   PhysicalDefensePercentBonus: 0
   MagicalAttackPercentBonus: 0
   MagicalDefensePercentBonus: 0
-  EquipmentType: 0
+  EquipmentType: 1

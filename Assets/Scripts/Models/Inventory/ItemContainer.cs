@@ -6,13 +6,10 @@ public abstract class ItemContainer : MonoBehaviour, IItemContainer {
     [SerializeField] protected ItemSlot[] itemSlots;
 
     public bool AddItem (Item item) {
-        Debug.Log ("Adding item");
         for (int i = 0; i < itemSlots.Length; i++) {
             if (itemSlots[i].Item == null || (itemSlots[i].Item.ID == item.ID && itemSlots[i].Amount < item.MaximumStacks)) {
                 itemSlots[i].Item = item;
                 itemSlots[i].Amount++;
-                Debug.Log ("Added item!");
-
                 return true;
             }
         }
@@ -85,8 +82,8 @@ public abstract class ItemContainer : MonoBehaviour, IItemContainer {
         int number = 0;
         for (int i = 0; i < itemSlots.Length; i++) {
             Item item = itemSlots[i].Item;
-            if (item != null && item.ID == itemID) { 
-                number++;
+            if (item != null && item.ID == itemID) {
+                number += itemSlots[i].Amount;
             }
         }
         return number;

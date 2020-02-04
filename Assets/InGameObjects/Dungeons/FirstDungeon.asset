@@ -16,5 +16,6 @@ MonoBehaviour:
   name: Ooga
   desc: Booga
   Enemies:
-  - {fileID: 11400000, guid: 20a82ba1165f848438f27e5aaa50c3c3, type: 2}
-  - {fileID: 11400000, guid: 79ccf7b0e4097a7448dc1d5106d3b1aa, type: 2}
+  - {fileID: 11400000, guid: a1e95715d9ee1364abec7e436c2aa629, type: 2}
+  - {fileID: 11400000, guid: 3a474741cf21c1847825c7777ee7fc02, type: 2}
+  - {fileID: 11400000, guid: a1f955f55dfc8a4488135a5070c0e1d5, type: 2}

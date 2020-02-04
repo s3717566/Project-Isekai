@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aca7735784e53549aa4b32263ce14e2, type: 3}
+  m_Name: the ground
+  m_EditorClassIdentifier: 
+  Id: 0
+  Name: the ground
+  Desc: you're really struggling there, aren't you
+  DungeonId: 0
+  PhysicalAttack:
+    BaseValue: 1
+  PhysicalDefense:
+    BaseValue: 1
+  MagicalAttack:
+    BaseValue: 0
+  MagicalDefense:
+    BaseValue: 0
+  MaxHealth: 8
+  Health: 8
+  HealthRegen: 0
+  Sprite: {fileID: 21300000, guid: 513d8a5e377e5c846a4312a01c405e81, type: 3}
+  ItemDrop: {fileID: 11400000, guid: cd8a45b072085fb43a787036ad77afee, type: 2}
