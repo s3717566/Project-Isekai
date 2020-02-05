@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Aqua
   Desc: 
   Sprite: {fileID: 21300000, guid: 7de9fbb9a05db43fabf8fe535f7e47df, type: 3}
+  unlocked: 0

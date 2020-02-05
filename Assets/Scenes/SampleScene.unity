@@ -3062,6 +3062,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 282240280}
   m_CullTransparentMesh: 0
+--- !u!114 &291916330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268da3dbcc5242f4986811532ec7c888, type: 3}
+  m_Name: branch(Clone)
+  m_EditorClassIdentifier: 
+  id: 8051de3669befa34d82041cfefa6b4a2
+  ItemName: a branch
+  Desc: It's not even that big, why didn't you just pick up a bigger one
+  MaximumStacks: 1
+  Icon: {fileID: 21300000, guid: ee81d5fa33c1252458831d51849439bd, type: 3}
+  PhysicalAttackBonus: 3
+  PhysicalDefenseBonus: 0
+  MagicalAttackBonus: 0
+  MagicalDefenseBonus: 0
+  PhysicalAttackPercentBonus: 0
+  PhysicalDefensePercentBonus: 0
+  MagicalAttackPercentBonus: 0
+  MagicalDefensePercentBonus: 0
+  EquipmentType: 0
 --- !u!1 &293371575
 GameObject:
   m_ObjectHideFlags: 0
@@ -4202,7 +4228,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &397749567
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5929,8 +5955,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0.000030518, y: 0}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &528892335
 MonoBehaviour:
@@ -6795,32 +6821,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697287809}
   m_CullTransparentMesh: 0
---- !u!114 &700586876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 268da3dbcc5242f4986811532ec7c888, type: 3}
-  m_Name: underwear(Clone)
-  m_EditorClassIdentifier: 
-  id: 6c3dea5f800a58649bd0a4b0a85c6f61
-  ItemName: 
-  Desc: 
-  MaximumStacks: 1
-  Icon: {fileID: 21300000, guid: 9b4c19a3e0a281643898d5ce6936096a, type: 3}
-  PhysicalAttackBonus: 0
-  PhysicalDefenseBonus: 1
-  MagicalAttackBonus: 0
-  MagicalDefenseBonus: 0
-  PhysicalAttackPercentBonus: 0
-  PhysicalDefensePercentBonus: 0
-  MagicalAttackPercentBonus: 0
-  MagicalDefensePercentBonus: 0
-  EquipmentType: 3
 --- !u!1 &710833617
 GameObject:
   m_ObjectHideFlags: 0
@@ -9889,6 +9889,7 @@ GameObject:
   - component: {fileID: 941900653}
   - component: {fileID: 941900652}
   - component: {fileID: 941900654}
+  - component: {fileID: 941900655}
   m_Layer: 5
   m_Name: DisplayUnlockables
   m_TagString: Untagged
@@ -9913,8 +9914,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -490.6, y: -14.3}
-  m_SizeDelta: {x: 733.6, y: 627}
+  m_AnchoredPosition: {x: -566.4, y: 9.2}
+  m_SizeDelta: {x: 582.1, y: 580}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &941900652
 MonoBehaviour:
@@ -9965,6 +9966,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gachaController: {fileID: 1211503429}
   haremStorage: {fileID: 11400000, guid: f4cabcf2144a56e4ab2cd06056edac1e, type: 2}
+--- !u!114 &941900655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941900650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2095666955, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 30
+    m_Right: 0
+    m_Top: 30
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 250, y: 250}
+  m_Spacing: {x: 20, y: 20}
+  m_Constraint: 1
+  m_ConstraintCount: 2
 --- !u!1 &947552629
 GameObject:
   m_ObjectHideFlags: 0
@@ -10523,12 +10548,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1211503427}
-        m_MethodName: 
-        m_Mode: 2
+      - m_Target: {fileID: 1211503429}
+        m_MethodName: buttonPressed
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 625662338}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -10663,32 +10688,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986203755}
   m_CullTransparentMesh: 0
---- !u!114 &989924451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 268da3dbcc5242f4986811532ec7c888, type: 3}
-  m_Name: branch(Clone)
-  m_EditorClassIdentifier: 
-  id: 8051de3669befa34d82041cfefa6b4a2
-  ItemName: a branch
-  Desc: It's not even that big, why didn't you just pick up a bigger one
-  MaximumStacks: 1
-  Icon: {fileID: 21300000, guid: ee81d5fa33c1252458831d51849439bd, type: 3}
-  PhysicalAttackBonus: 3
-  PhysicalDefenseBonus: 0
-  MagicalAttackBonus: 0
-  MagicalDefenseBonus: 0
-  PhysicalAttackPercentBonus: 0
-  PhysicalDefensePercentBonus: 0
-  MagicalAttackPercentBonus: 0
-  MagicalDefensePercentBonus: 0
-  EquipmentType: 0
 --- !u!1 &993789713
 GameObject:
   m_ObjectHideFlags: 0
@@ -11656,7 +11655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1099029507}
   amountText: {fileID: 1951314235}
-  _item: {fileID: 700586876}
+  _item: {fileID: 1338989989}
 --- !u!114 &1099029507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13374,10 +13373,10 @@ RectTransform:
   m_Father: {fileID: 941900651}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -205, y: 167}
-  m_SizeDelta: {x: 270.3, y: 256.8}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 155, y: -155}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1259403069
 MonoBehaviour:
@@ -14616,6 +14615,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338192432}
   m_CullTransparentMesh: 0
+--- !u!114 &1338989989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268da3dbcc5242f4986811532ec7c888, type: 3}
+  m_Name: underwear(Clone)
+  m_EditorClassIdentifier: 
+  id: 6c3dea5f800a58649bd0a4b0a85c6f61
+  ItemName: 
+  Desc: 
+  MaximumStacks: 1
+  Icon: {fileID: 21300000, guid: 9b4c19a3e0a281643898d5ce6936096a, type: 3}
+  PhysicalAttackBonus: 0
+  PhysicalDefenseBonus: 1
+  MagicalAttackBonus: 0
+  MagicalDefenseBonus: 0
+  PhysicalAttackPercentBonus: 0
+  PhysicalDefensePercentBonus: 0
+  MagicalAttackPercentBonus: 0
+  MagicalDefensePercentBonus: 0
+  EquipmentType: 3
 --- !u!1 &1339130180
 GameObject:
   m_ObjectHideFlags: 0
@@ -17820,7 +17845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1696531580}
   amountText: {fileID: 1281020739}
-  _item: {fileID: 989924451}
+  _item: {fileID: 291916330}
 --- !u!114 &1696531580
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b95d4dc3ad60549abd5083ab80a545, type: 3}
   m_Name: ZeroTwo
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 3
   Name: Zero Two
   Desc: 
   Sprite: {fileID: 21300000, guid: e1790d72cda0e4bb2a8d5e4242a9ca49, type: 3}
+  unlocked: 0
