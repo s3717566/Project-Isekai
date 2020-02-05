@@ -84,10 +84,11 @@ public class GachaController : MonoBehaviour {
         int randomIndex = random.Next(notUnlockedMembers.Count);
         
         notUnlockedMembers[randomIndex].unlocked = true;
-        Debug.Log("Unlocked: " + notUnlockedMembers[randomIndex].Name + " and now: " + notUnlockedMembers[randomIndex].unlocked);
 
         //Remember to call refresh after unlocking, so that if they unlocked a waifu within the display, the display will update
         //to reflect the unlock.
-        refreshUnlockables();
+        //Can do: only refresh if one of the displayed members is unlocked (right now, this always happens instead of only when
+        //  a member on display is unlocked)
+        // refreshUnlockables();
     }
 }
