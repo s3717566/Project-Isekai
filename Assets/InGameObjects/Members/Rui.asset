@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24b95d4dc3ad60549abd5083ab80a545, type: 3}
-  m_Name: Momo
+  m_Name: Rui
   m_EditorClassIdentifier: 
-  Id: 1
-  Name: Momo
+  Id: 6
+  Name: Rui
   Desc: 
-  Sprite: {fileID: 21300000, guid: 8fd705a08224143c8bd3a105862bfe04, type: 3}
+  Sprite: {fileID: 21300000, guid: bb3881e3194dd4df5809b79323fbe28f, type: 3}
   unlocked: 0

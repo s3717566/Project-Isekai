@@ -10,6 +10,8 @@ public class Member : ScriptableObject
     public string Desc;
     public Sprite Sprite;
 
+    public bool unlocked;
+
     public override string ToString() {
         return "id: " + Id + ", name: " + Name;
     }
