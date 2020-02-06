@@ -56,7 +56,7 @@ public class UI_Harem : MonoBehaviour {
                 }
             }
 
-            foreach (Member member in haremStorage.getHaremList ()) {
+            foreach (Member member in haremStorage.getAllUnlocked()) {
                 if (member.Name.Equals("02")) {
                     continue;
                 }

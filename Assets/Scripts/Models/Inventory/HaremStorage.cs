@@ -41,4 +41,17 @@ public class HaremStorage : ScriptableObject {
         }
         return returnList;
     }
+
+    //Return a list of all members who have unlocked = true.
+    public List<Member> getAllUnlocked() {
+        List<Member> returnList = new List<Member>();
+
+        foreach (Member member in members) {
+            if (member.unlocked) {
+                returnList.Add(member);
+            }
+        }
+
+        return returnList;
+    }
 }
