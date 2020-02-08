@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c737dfb90415a4ecd8fcd3bf7f145afa, type: 3}
+  m_Name: LootBoxStorage
+  m_EditorClassIdentifier: 
+  allLootBoxes:
+  - {fileID: 11400000, guid: a499e9cc6d6c64dfca7a29c1afe71b37, type: 2}
+  - {fileID: 11400000, guid: 2f24166b14d7547eba073d1aae120268, type: 2}
+  - {fileID: 11400000, guid: 6d061b7b40b8546809a0759d8fa487e4, type: 2}

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e340c0da343844f3affea404a6c54cd, type: 3}
+  m_Name: GodBox
+  m_EditorClassIdentifier: 
+  Id: 2
+  Name: God Box
+  Desc: 
+  Sprite: {fileID: 0}
+  unlockables:
+  - {fileID: 11400000, guid: 9f051313d6dba4f3e83fa6c0cb80869a, type: 2}
