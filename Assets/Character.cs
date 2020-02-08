@@ -10,6 +10,11 @@ public class Character : MonoBehaviour {
     public AdventureStat MagicalAttack;
     public AdventureStat MagicalDefense;
 
+    int PhysicalAttackLevel;
+    int PhysicalDefenseLevel;
+    int MagicalAttackLevel;
+    int MagicalDefenseLevel;
+
     [SerializeField] StatPanel[] statPanels;
     [SerializeField] private UI_Harem uiHarem;
     public HaremStorage haremStorage;

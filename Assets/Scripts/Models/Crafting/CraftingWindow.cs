@@ -71,20 +71,11 @@ public class CraftingWindow : MonoBehaviour
 
             craftingRecipeUIs[i].ItemContainer = ItemContainer;
             craftingRecipeUIs[i].CraftingRecipe = CraftingRecipes[i];
-            //if (i == 0)
-            //{
-            //    craftingRecipeUIs[i].setInitialCraftingRecipe();
-            //}
-            //craftingRecipeUIs[i].ToString();
-
-            //set the public variables for where the two seperated transforms are here NOW DONE ABOVE
-            //craftingRecipeUIs[i].RequirementSlotHolder = RequirementSlotHolder;
-            //craftingRecipeUIs[i].OutputSlotHolder = OutputSlotHolder;
         }
 
-        for (int i = CraftingRecipes.Count; i < craftingRecipeUIs.Count; i++)
-        {
-            craftingRecipeUIs[i].CraftingRecipe = null;
-        }
+        //for (int i = CraftingRecipes.Count; i < craftingRecipeUIs.Count; i++)
+        //{
+        //    craftingRecipeUIs[i].CraftingRecipe = null;
+        //}
     }
 }

@@ -10,8 +10,6 @@ public class CraftingRecipeUI : MonoBehaviour
     BaseItemSlot[] requirementSlots;
     BaseItemSlot[] outputSlots;
     Button craftButton;
-
-    //this doesnt need to be an array
     BaseItemSlot recipeSlot;
 
     /*
@@ -102,19 +100,10 @@ public class CraftingRecipeUI : MonoBehaviour
     {
         if (craftingRecipe != null)
         {
-            //SetSlots (craftingRecipe.Materials, materialSlots);
-            // arrowParent.SetSiblingIndex(slotIndex);
-            //SetSlots (craftingRecipe.Results,  resultSlots);
-            //SetSlots (craftingRecipe.Results,  recipeSlots);
-
-            //sets subsequent slots to inactive - pls fix
-            // for (int i = slotIndex; i < materialSlots.Length; i++) {
-            //     materialSlots[i].transform.parent.gameObject.SetActive (false);
-            // }
-
             //you could probably do the following part generically and i dont think it would be hard, im too lazy rn
             UpdateRequirementSlotHolder(craftingRecipe.Materials);
             UpdateOutputSlotHolder(craftingRecipe.Results);
+            UpdateRecipeSlotHolder(craftingRecipe.Results);
             setButton();
             gameObject.SetActive(true);
         }
@@ -165,15 +154,13 @@ public class CraftingRecipeUI : MonoBehaviour
 
     public void UpdateRecipeSlotHolder(IList<ItemAmount> itemAmountList)
     {
-        BaseItemSlot itemSlot;
         ItemAmount itemFromRecipe = itemAmountList[0];
         if (recipeSlot != null)
         {
-            itemSlot = recipeSlot;
-            itemSlot.Item = itemFromRecipe.Item;
-            itemSlot.Amount = itemFromRecipe.Amount;
+            recipeSlot.Item = itemFromRecipe.Item;
+            recipeSlot.Amount = itemFromRecipe.Amount;
         }
-        //Debug.Log("setting this item as recipe slot: " + itemFromRecipe.Item.ToString());
+        Debug.Log("setting this item as recipe slot: " + itemFromRecipe.Item.ToString());
 
         
     }
