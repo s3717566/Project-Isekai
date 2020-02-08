@@ -17,12 +17,12 @@ public class TrainingController : MonoBehaviour
     private int magicalAttackLevel;
     private int magicalDefenceLevel;
 
-    private int incrementAmount;
+    private int incrementAmount; //this is the training speed
     void Start()
     {
         incrementAmount = 1;
         InvokeRepeating("UpdateEverySecond", 0, 1.0f);
-
+        maxClones = 1;
     }
 
     void UpdateEverySecond()
@@ -31,38 +31,7 @@ public class TrainingController : MonoBehaviour
         physicalDefenceLevel += (physicalDefenceClones * incrementAmount);
         magicalAttackLevel += (magicalAttackClones * incrementAmount);
         magicalDefenceLevel += (magicalDefenceClones * incrementAmount);
-    }
-
-    void incrementPhysicalAttack()
-    {
-        if (areClonesFree())
-        {
-            physicalAttackClones++;
-        }
-    }  
-    
-    void incrementPhysicalDefence()
-    {
-        if (areClonesFree())
-        {
-            physicalAttackClones++;
-        }
-    }  
-    
-    void incrementMagicalAttack()
-    {
-        if (areClonesFree())
-        {
-            physicalAttackClones++;
-        }
-    }  
-    
-    void incrementMagicalDefence()
-    {
-        if (areClonesFree())
-        {
-            physicalAttackClones++;
-        }
+        printAll();
     }
 
     public bool areClonesFree()
@@ -70,5 +39,72 @@ public class TrainingController : MonoBehaviour
         return (maxClones > (physicalAttackClones + physicalDefenceClones + magicalAttackClones + magicalDefenceClones));
     }
 
+    public void incrementPhysicalAttackClones()
+    {
+        if (areClonesFree())
+        {
+            physicalAttackClones++;
+        }
+    }
 
+    public void incrementPhysicalDefenceClones()
+    {
+        if (areClonesFree())
+        {
+            physicalDefenceClones++;
+        }
+    }
+
+    public void incrementMagicalAttackClones()
+    {
+        if (areClonesFree())
+        {
+            magicalAttackClones++;
+        }
+    }
+
+    public void incrementMagicalDefenceClones()
+    {
+        if (areClonesFree())
+        {
+            magicalDefenceClones++;
+        }
+    }
+
+    public void decrementPhysicalAttackClones()
+    {
+        if (physicalAttackClones > 0)
+        {
+            physicalAttackClones--;
+        }
+    }
+
+    public void decrementPhysicalDefenceClones()
+    {
+        if (physicalDefenceClones > 0)
+        {
+            physicalDefenceClones--;
+        }
+    }
+
+    public void decrementMagicalAttackClones()
+    {
+        if (magicalAttackClones > 0)
+        {
+            magicalAttackClones--;
+        }
+    }
+
+    public void decrementMagicalDefenceClones()
+    {
+        if (magicalDefenceClones > 0)
+        {
+            magicalDefenceClones--;
+        }
+    }
+
+    public void printAll()
+    {
+        Debug.Log(physicalAttackLevel + physicalDefenceLevel + magicalAttackLevel + magicalDefenceLevel);
+    }
 }
