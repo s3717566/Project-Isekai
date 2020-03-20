@@ -1,110 +1,122 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TrainingController : MonoBehaviour
 {
+    public event EventHandler OnUIChanged;
+
     [SerializeField] Character character;
-    private int maxClones;
+    public int MaxClones;
 
-    private int physicalAttackClones;
-    private int physicalDefenceClones;
-    private int magicalAttackClones;
-    private int magicalDefenceClones;
-
-    private int physicalAttackLevel;
-    private int physicalDefenceLevel;
-    private int magicalAttackLevel;
-    private int magicalDefenceLevel;
+    public int PhysicalAttackClones;
+    public int PhysicalDefenceClones;
+    public int MagicalAttackClones;
+    public int MagicalDefenceClones;
 
     private int incrementAmount; //this is the training speed
     void Start()
     {
         incrementAmount = 1;
         InvokeRepeating("UpdateEverySecond", 0, 1.0f);
-        maxClones = 1;
+        MaxClones = 1;
     }
 
     void UpdateEverySecond()
     {
-        physicalAttackLevel += (physicalAttackClones * incrementAmount);
-        physicalDefenceLevel += (physicalDefenceClones * incrementAmount);
-        magicalAttackLevel += (magicalAttackClones * incrementAmount);
-        magicalDefenceLevel += (magicalDefenceClones * incrementAmount);
+        character.PhysicalAttackLevel += (PhysicalAttackClones * incrementAmount);
+        character.PhysicalDefenceLevel += (PhysicalDefenceClones * incrementAmount);
+        character.MagicalAttackLevel += (MagicalAttackClones * incrementAmount);
+        character.MagicalDefenceLevel += (MagicalDefenceClones * incrementAmount);
+        refreshUI();
         printAll();
     }
 
-    public bool areClonesFree()
+    public int ClonesFree()
     {
-        return (maxClones > (physicalAttackClones + physicalDefenceClones + magicalAttackClones + magicalDefenceClones));
+        return (MaxClones - (PhysicalAttackClones + PhysicalDefenceClones + MagicalAttackClones + MagicalDefenceClones));
     }
 
     public void incrementPhysicalAttackClones()
     {
-        if (areClonesFree())
+        if (ClonesFree() > 0)
         {
-            physicalAttackClones++;
+            PhysicalAttackClones++;
+            refreshUI();
         }
     }
 
     public void incrementPhysicalDefenceClones()
     {
-        if (areClonesFree())
+        if (ClonesFree() > 0)
         {
-            physicalDefenceClones++;
+            PhysicalDefenceClones++;
+            refreshUI();
         }
     }
 
     public void incrementMagicalAttackClones()
     {
-        if (areClonesFree())
+        if (ClonesFree() > 0)
         {
-            magicalAttackClones++;
+            MagicalAttackClones++;
+            refreshUI();
         }
     }
 
     public void incrementMagicalDefenceClones()
     {
-        if (areClonesFree())
+        if (ClonesFree() > 0)
         {
-            magicalDefenceClones++;
+            MagicalDefenceClones++;
+            refreshUI();
         }
     }
 
     public void decrementPhysicalAttackClones()
     {
-        if (physicalAttackClones > 0)
+        if (PhysicalAttackClones > 0)
         {
-            physicalAttackClones--;
+            PhysicalAttackClones--;
+            refreshUI();
         }
     }
 
     public void decrementPhysicalDefenceClones()
     {
-        if (physicalDefenceClones > 0)
+        if (PhysicalDefenceClones > 0)
         {
-            physicalDefenceClones--;
+            PhysicalDefenceClones--;
+            refreshUI();
         }
     }
 
     public void decrementMagicalAttackClones()
     {
-        if (magicalAttackClones > 0)
+        if (MagicalAttackClones > 0)
         {
-            magicalAttackClones--;
+            MagicalAttackClones--;
+            refreshUI();
         }
     }
 
     public void decrementMagicalDefenceClones()
     {
-        if (magicalDefenceClones > 0)
+        if (MagicalDefenceClones > 0)
         {
-            magicalDefenceClones--;
+            MagicalDefenceClones--;
+            refreshUI();
         }
     }
 
     public void printAll()
     {
-        Debug.Log(physicalAttackLevel + physicalDefenceLevel + magicalAttackLevel + magicalDefenceLevel);
+        Debug.Log(character.PhysicalAttackLevel + character.PhysicalDefenceLevel + character.MagicalAttackLevel + character.MagicalDefenceLevel);
+    }
+
+    public void refreshUI ()
+    {
+        OnUIChanged.Invoke(this, EventArgs.Empty);
     }
 }

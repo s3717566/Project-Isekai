@@ -120,8 +120,8 @@ public class AdventureController : MonoBehaviour {
     }
 
     public void loseHealthCalc () {
-        double ptotal = currentEnemy.PhysicalAttack.Value - character.PhysicalDefense.Value;
-        double mtotal = currentEnemy.MagicalAttack.Value - character.MagicalDefense.Value;
+        double ptotal = currentEnemy.PhysicalAttack.Value - character.PhysicalDefence.Value;
+        double mtotal = currentEnemy.MagicalAttack.Value - character.MagicalDefence.Value;
         if (ptotal > 0) {
             health -= ptotal;
             // Debug.Log ("Player took " + ptotal + " p dmg");

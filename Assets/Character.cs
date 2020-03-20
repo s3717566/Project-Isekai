@@ -6,14 +6,14 @@ public class Character : MonoBehaviour {
 
     //character is where the main player details are stored. Some things will need to be moved here. It joins the inventoryManager to the statPanels.
     public AdventureStat PhysicalAttack;
-    public AdventureStat PhysicalDefense;
+    public AdventureStat PhysicalDefence;
     public AdventureStat MagicalAttack;
-    public AdventureStat MagicalDefense;
+    public AdventureStat MagicalDefence;
 
-    int PhysicalAttackLevel;
-    int PhysicalDefenseLevel;
-    int MagicalAttackLevel;
-    int MagicalDefenseLevel;
+    public int PhysicalAttackLevel;
+    public int PhysicalDefenceLevel;
+    public int MagicalAttackLevel;
+    public int MagicalDefenceLevel;
 
     [SerializeField] StatPanel[] statPanels;
     [SerializeField] private UI_Harem uiHarem;
@@ -21,7 +21,7 @@ public class Character : MonoBehaviour {
 
     private void Awake () {
         for (int i = 0; i < statPanels.Length; i++) {
-        statPanels[i].SetStats (PhysicalAttack, PhysicalDefense, MagicalAttack, MagicalDefense);
+        statPanels[i].SetStats (PhysicalAttack, PhysicalDefence, MagicalAttack, MagicalDefence);
         statPanels[i].UpdateStatValues ();
         }
         uiHarem.setHaremStorage (haremStorage);
